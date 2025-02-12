@@ -123,3 +123,43 @@ function revealWord() {
 }
 
 // Llama a esta función cuando el jugador pierda
+
+const englishButton = document.getElementById('englishButton');
+const frenchButton = document.getElementById('frenchButton');
+const spanishButton = document.getElementById('spanishButton');
+const menuButton = document.getElementById('menuButton');
+
+let words = [];
+
+const selectLanguage = (language) => {
+    switch(language) {
+        case 'english':
+            words = englishWords;
+            break;
+        case 'french':
+            words = frenchWords;
+            break;
+        case 'spanish':
+            words = spanishWords;
+            break;
+    }
+    startButton.style.display = 'block';
+    menuButton.style.display = 'block';
+    document.getElementById('languageButtons').style.display = 'none';
+};
+
+englishButton.addEventListener('click', () => selectLanguage('english'));
+frenchButton.addEventListener('click', () => selectLanguage('french'));
+spanishButton.addEventListener('click', () => selectLanguage('spanish'));
+
+const returnToMenu = () => {
+    startButton.style.display = 'none';
+    menuButton.style.display = 'none';
+    document.getElementById('languageButtons').style.display = 'block';
+    wordContainer.innerHTML = '';
+    usedLettersElement.innerHTML = '';
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.removeEventListener('keydown', letterEvent);
+};
+
+menuButton.addEventListener('click', returnToMenu);
