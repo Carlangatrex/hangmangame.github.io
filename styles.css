@@ -48,6 +48,21 @@ body {
     cursor: pointer;
 }
 
+#menuButton {
+    margin-top: 20px; /* Add margin to position the button lower */
+    appearance: none;
+    font-family: 'SF Pixelate', sans-serif;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    background: #d95d39;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 .reveal {
     color: #fdfdfd; /* Cambia el color a visible */
 }
